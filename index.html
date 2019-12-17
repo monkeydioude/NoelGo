@@ -2,14 +2,20 @@
     <head>
         <script type="text/javascript" src="./index.js"></script>
         <style>
+            html, body {
+                margin: 0;
+                font-size: 1.1em;
+                background-image: url("./ace.jfif");
+            }
             #MainContainer {
-                width: 80%;
+                width: 50%;
                 margin: 0 auto;
             }
 
             textarea {
                 width: 100%;
                 min-height: 200px;
+                font-size: 1.1em;
             }
             #LetterOverload {
                 width: 20px;
@@ -18,15 +24,20 @@
                 float: right;
                 color: lightgray;
             }
+            button {
+                width: 40px;
+                height: 40px;
+            }
         </style>
     </head>
     <body>
         <div id="MainContainer">
             A = <input id="LetterOverload" type="text" value="F" />
+            <br />
             <textarea id="MagicalSpell"></textarea>
             <textarea id="SadHumanLanguage"></textarea>
             <button id="WiseButtonTellMeYourSecrets">Ok</button>
-            <span id="V">v1.4</span>
+            <span id="V">v1.5</span>
         </div>
     </body>
 </html>

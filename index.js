@@ -72,11 +72,11 @@ window.addEventListener('load', function () {
     document.querySelector("#WiseButtonTellMeYourSecrets").addEventListener('click', function() {
         let letterOverload = getLetterOverloadValue(overload.value);
 
-        if (magicSpell.value.length == 0) {
-            magicSpell.value = translate(ningengo.value, letterOverload * -1);
+        if (ningengo.value.length == 0) {
+            ningengo.value = translate(magicSpell.value, letterOverload);
             return;
         }
-        ningengo.value = translate(magicSpell.value, letterOverload);
+        magicSpell.value = translate(ningengo.value, letterOverload * -1);
 
     });
     triggerFromQueryString();
