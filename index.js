@@ -54,6 +54,10 @@ function triggerFromQueryString() {
     document.querySelector("#WiseButtonTellMeYourSecrets").click();
 }
 
+function getLetterOverloadValue(letter) {
+    return alphabet.indexOf(letter.toLowerCase()) - 1;
+}
+
 window.addEventListener('load', function () {
     let overloadGet = getParameterByName('o');
 
@@ -66,7 +70,7 @@ window.addEventListener('load', function () {
     }
 
     document.querySelector("#WiseButtonTellMeYourSecrets").addEventListener('click', function() {
-        let letterOverload = parseInt(overload.value);
+        let letterOverload = getLetterOverloadValue(overload.value);
 
         if (magicSpell.value.length == 0) {
             magicSpell.value = translate(ningengo.value, letterOverload * -1);
