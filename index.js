@@ -73,10 +73,10 @@ window.addEventListener('load', function () {
         let letterOverload = getLetterOverloadValue(overload.value);
 
         if (ningengo.value.length == 0) {
-            ningengo.value = translate(magicSpell.value, letterOverload);
+            ningengo.value = translate(magicSpell.value.toLowerCase(), letterOverload);
             return;
         }
-        magicSpell.value = translate(ningengo.value, letterOverload * -1);
+        magicSpell.value = translate(ningengo.value.toLowerCase(), letterOverload * -1);
 
     });
     triggerFromQueryString();
