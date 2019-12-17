@@ -1,8 +1,8 @@
-var letterOverload = 4;
 const alphabet = "abcdefghijklmnopqrstuvwxyz";
 const exceptions = " .!";
 let magicSpell = null,
-    ningengo = null;
+    ningengo = null,
+    overload = null;
 
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -56,12 +56,15 @@ window.addEventListener('load', function () {
 
     magicSpell = document.querySelector("#MagicalSpell");
     ningengo = document.querySelector("#SadHumanLanguage");
+    overload = document.querySelector("#LetterOverload");
     
     if (overloadGet != null && overloadGet.length > 0) {
-        letterOverload = parseInt(overloadGet);
+        overload.value = parseInt(overloadGet);
     }
 
     document.querySelector("#WiseButtonTellMeYourSecrets").addEventListener('click', function() {
+        let letterOverload = parseInt(overload.value);
+
         if (magicSpell.value.length == 0) {
             magicSpell.value = translate(ningengo.value, letterOverload * -1);
             return;
