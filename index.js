@@ -27,6 +27,9 @@ function translate(str, value) {
         if (v >= alphabet.length) {
             v = v - alphabet.length;
         }
+        if (v < 0 ) {
+            v = alphabet.length + v;
+        }
         res += alphabet[v];
     }
     return res;
@@ -69,10 +72,7 @@ window.addEventListener('load', function () {
             magicSpell.value = translate(ningengo.value, letterOverload * -1);
             return;
         }
-        if (ningengo.value.length == 0) {
-            ningengo.value = translate(magicSpell.value, letterOverload);
-            return;
-        }
+        ningengo.value = translate(magicSpell.value, letterOverload);
 
     });
     triggerFromQueryString();
